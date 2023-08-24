@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation'
 import AuthButtonServer from './auth-button-server'
 import NewTweet from './new-tweet'
 import Likes from './likes'
+import Tweets from './tweets'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,15 +33,7 @@ export default async function Home() {
     <main>
       <AuthButtonServer />
       <NewTweet />
-      {tweets?.map(tweet => (
-        <div key={tweet.id}>
-          <p>
-            {tweet.author.name} {tweet.author.username} 
-          </p>
-          <p>{tweet.title}</p>
-          <Likes tweet={tweet}/>
-        </div>
-      ))}
+      <Tweets tweets={tweets}/>
     </main>
   )
 }
