@@ -1,5 +1,10 @@
 import './globals.css'
 
+export const metadata = {
+  title: "Twitter Clone",
+  description: "Twitter Clone built using Next js and Supabase",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -7,12 +12,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-      <body>{children}</body>
+      <body>
+        <div className="bg-gray-900 min-h-screen flex">
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
